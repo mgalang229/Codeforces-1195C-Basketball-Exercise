@@ -45,25 +45,25 @@ public class AuthorSol {
 			}
 			Pair p = new Pair(0, 0);
 			for (int i = 0; i < n; i++) {
-//				System.out.println(p.first + " " +  (p.second + arr[0][i]));
-//				System.out.println(p.second + " " +  (p.first + arr[1][i]));
+//				System.out.println(p.top + " " +  (p.bottom + arr[0][i]));
+//				System.out.println(p.bottom + " " +  (p.top + arr[1][i]));
 				
-				p = new Pair(Math.max(p.first, p.second + arr[0][i]), 
-							 Math.max(p.second, p.first + arr[1][i]));
+				p = new Pair(Math.max(p.top, p.bottom + arr[0][i]), 
+							 Math.max(p.bottom, p.top + arr[1][i]));
 				
 //				System.out.println();
 			}
-			out.println(Math.max(p.first, p.second));
+			out.println(Math.max(p.top, p.bottom));
 		}
 		out.close();
 	}
 	
 	static class Pair {
-		long first, second;
+		long top, bottom;
 		
-		Pair(long first, long second) {
-			this.first = first;
-			this.second = second;
+		Pair(long top, long bottom) {
+			this.top = top;
+			this.bottom = bottom;
 		}
 	}
 	
